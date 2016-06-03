@@ -1,0 +1,50 @@
+﻿@font-face {
+        font-family: "Roboto";
+        font-style:normal;
+        font-weight:100;
+        src: local("Roboto"), url("../fonts/Roboto-Thin.ttf") format("truetype");
+}
+@font-face {
+        font-family: "Roboto";
+        font-style:normal;
+        font-weight:300;
+        src: local("Roboto"), url("../fonts/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+        font-family: "Roboto";
+        font-style:normal;
+        font-weight:400;
+        src: local("Roboto"), url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+        font-family: "Roboto";
+        font-style:normal;
+        font-weight:500;
+        src: local("Roboto"), url("../fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+
+@font-face {
+        font-family: "Raleway";
+        font-style:normal;
+        font-weight:100;
+        src: local("Roboto"), url("../fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+}
+@font-face {
+        font-family: "Raleway";
+        font-style:normal;
+        font-weight:300;
+        src: local("Roboto"), url("../fonts/Roboto/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+        font-family: "Raleway";
+        font-style:normal;
+        font-weight:400;
+        src: local("Roboto"), url("../fonts/Roboto/Roboto-Normal.ttf") format("truetype");
+}
+@font-face {
+        font-family: "Raleway";
+        font-style:normal;
+        font-weight:500;
+        src: local("Roboto"), url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}

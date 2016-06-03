@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="manifest" href="js/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Realbox</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <link href="../css/fonts.css" rel="stylesheet" type="text/css">
+     <link href="../css/popup.css" rel="stylesheet" type="text/css">
+    <link href="../css/screen.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="col-xs-12 col-sm-12 inputContainer">
+            <div class="dropdownContainer">
+
+            </div>
+            <input placeholder="Enter your Message" class="input col-xs-7"></input>
+            
+                <input placeholder="Enter URL" class="url col-xs-7"></input>
+
+
+            
+
+            <div class="btnSave col-xs-offset-1 col-xs-4">
+                Send
+            </div>
+        </div>
+<script type = "text/x-jquery-tmpl" id = "dropdownTemplate">
+        <div class="dropdown">
+            <input class="selected" placeholder="selectMember">
+            <div class="clientContainer hide">
+                 {{each(i, value) data}}
+                        <div class="client">
+                        {{html name}}
+                        </div>
+                    {{/each}}
+            </div>
+        </div>
+  </script>
+
+     <script src="../scripts/jquery.js"></script>
+    <script src="../scripts/transit.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/highcharts.js"></script>
+    <script src="../scripts/jquery.tmpl.min.js"></script>
+    <script src="../scripts/jslinq.js"></script>
+    <script src="../scripts/moment.min.js"></script>
+    <script src="../scripts/superjson.js"></script>
+    <script src="../scripts/tocca.min.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/pushMsg.js"></script>
+</body>
+
+</html>

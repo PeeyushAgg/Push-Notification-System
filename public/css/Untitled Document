@@ -1,0 +1,12 @@
+.popUpWindow{
+	position:relative;
+	float:left;
+	width:100%;
+}
+.hide{
+	display:none;
+}
+
+.show{
+	display:show;	
+}
