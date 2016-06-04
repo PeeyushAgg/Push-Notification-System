@@ -1,0 +1,547 @@
+//out:calendar.css
+html {
+  font-size: 10px;
+}
+@dark: #648A63;
+@light: #92B391;
+@gray: #645c5c;
+@lightGray: #f7f5f6;
+@black: black;
+@white: white;
+@darkGrapeFruit: #f11c45;
+@lightGrapeFuit: #ff3558;
+@lightButterSweet: #ff5c3d;
+@darkButterSweet: #fe4023;
+@lightSunflower: #fed345;
+@darkSUnflower: #ffb933;
+@lightGrass: #89de62;
+@darkGrass: #73ca50;
+@lightMint: #00d9b3;
+@darkMint: #00c49e;
+@lightAqua: #02c2f1;
+@darkAqua: #00afdd;
+@lightBlueJeans: #5496f1;
+@darkBlueJeans: #3e86db;
+@lightLavander: #b985ef;
+@darkLavender: #a569e3;
+@lightPinkRose: #fe76be;
+@darkPinkRose: #e862a9;
+@translucentBlack: rgba(0,0,0,.8);
+@translucentWhite: rgba(255,255,255,.5);
+@shadow: rgba(0,0,0,0.4);
+@borderBlack: 1px dotted rgba(0,0,0,.4);
+@borderWhite: 1px dotted rgba(255,255,255,.4);
+@h1: 1.4rem;
+@h2: 1.6rem;
+@h3: 1.8rem;
+@h4: 2rem;
+@h5: 2.2rem;
+@h6: 2.4rem;
+@bold: 400;
+@font: 'Roboto','sans-serif';
+input::-webkit-input-placeholder {
+  font-family: @font;
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: black;
+}
+input {
+  font-family: @font;
+  color: #C3C3C3;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+.show {
+  display: block !important;
+}
+.hide {
+  display: none;
+}
+.target{
+  color:red;
+  text-transform: uppercase;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.mainContainerCalendar {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 100%;
+  background: #E2E0E0;
+  font-family: 'Roboto','sans-serif';
+  font-weight: 300;
+  padding: 10rem 12rem 0;
+  .calendarBlock {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 10rem;
+    box-sizing: border-box;
+    font-family: 'Roboto','sans-serif';
+    .calendarContainer {
+      padding-left: 0;
+      padding-right: 0;
+      box-shadow: 0.1rem 0.1rem 2rem 0.1rem rgba(0,0,0,0.2);
+      box-sizing: border-box;
+      .rightPanel {
+        position: relative;
+        float: left;
+        height: 60rem;
+        padding-left: 0;
+        padding-right: 0;
+        background: @lightGray;
+        overflow: hidden;
+        .eventContainer {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          overflow: hidden;
+          ::-webkit-scrollbar {
+            display: none;
+          }
+          .eventImageContainer {
+            position: relative;
+            float: left;
+            height: 40rem;
+            width: 100%;
+            background-image: url("../images/eventOne.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            .eventDate {
+              position: absolute;
+              bottom: 0;
+              height: 7rem;
+              line-height: 7rem;
+              padding-left: 2rem;
+              width: 100%;
+              font-size: 2.8rem;
+              font-weight: 100;
+              box-sizing: border-box;
+              color: @white;
+              background: linear-gradient(to right, rgba(252,247,252,0.84) 0%, rgba(3,3,3,0.84) 0%, rgba(3,3,3,0.18) 100%);
+            }
+          }
+          .eventDataContainer {
+            position: relative;
+            float: left;
+            height: 20rem;
+            width: 100%;
+            color: @gray;
+            font-size: 2rem;
+            padding-top: 2rem;
+            padding-left: 6rem;
+            padding-right: 2rem;
+            box-sizing: border-box;
+            .data {
+              position: relative;
+              float: left;
+              height: 4rem;
+              width: 100%;
+              .icon {
+                position: absolute;
+                left: -4rem;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+              }
+            }
+            .name {
+              height: 3rem;
+            }
+            .descriptionBlock {
+              font-size: 1.6rem;
+              height: 6.9rem !important;
+              .description {
+                position: absolute;
+                top: 0;
+                bottom: 0.5rem;
+                width: 100%;
+                overflow: auto;
+              }
+            }
+            .timing {
+              line-height: 3.5rem;
+              height: 3.5rem;
+            }
+            .addressBlock {
+              line-height: 4rem;
+              height: 4rem;
+              font-size: 1.6rem;
+              .address {
+                position: absolute;
+                top: 0;
+                bottom: 0.5rem;
+                width: 100%;
+                overflow: auto;
+              }
+              @media screen and (max-width: 420px) {
+                .address {
+                  position: absolute;
+                  top: 1rem;
+                  bottom: 0.5rem;
+                  width: 65%;
+                  line-height: 2.2rem;
+                  overflow: auto;
+                }
+              }
+            }
+          }
+          .flipContainer {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            height: 4rem;
+            line-height: 4rem;
+            width: 10rem;
+            perspective: 1000;
+            z-index: 50;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease;
+            .btnBook {
+              position: absolute;
+              height: 4rem;
+              line-height: 4rem;
+              width: 10rem;
+              text-align: center;
+              color: @white;
+              font-weight: 400;
+              -webkit-transition: 0.3s;
+              -webkit-transform-style: preserve-3d;
+              .face {
+                -webkit-backface-visibility: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+              .front {
+                z-index: 10;
+                -webkit-transform: rotateY(0deg);
+                background: #92B391;
+              }
+              .back {
+                -webkit-transform: rotateY(180deg);
+                background: #92B391;
+              }
+              &.rotate {
+                -webkit-transform: rotateY(180deg);
+              }
+            }
+            &.hideBtn {
+              opacity: 0;
+            }
+          }
+          @media screen and (max-width: 420px) {
+            .flipContainer {
+              bottom: 1rem;
+            }
+          }
+        }
+        .confirmationContainer {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background: white;
+          opacity: 0;
+          -webkit-transition: all 0.3s ease;
+          .detailContainer {
+            position: absolute;
+            height: 40rem;
+            width: 50rem;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            .placeholder {
+              position: relative;
+              height: 5rem;
+              line-height: 5rem;
+              width: 100%;
+              box-sizing: border-box;
+              border: none;
+              font-size: 4rem;
+              border-bottom: 0.1rem solid #e4e4e4;
+              color: @gray;
+              background: transparent;
+              font-weight: 100;
+              margin-top: 4rem;
+            }
+            .placeholder::-webkit-input-placeholder {
+              color: #C3C3C3;
+              font-size: 4rem;
+              font-family: @font;
+              font-weight: 100;
+            }
+            .selectPersonContainer {
+              position: relative;
+              float: left;
+              width: 100%;
+              padding-top: 4rem;
+              box-sizing: border-box;
+              .text {
+                position: relative;
+                width: 100%;
+                height: 5rem;
+                line-height: 5rem;
+                font-size: 2.4rem;
+                color: @gray;
+              }
+              .personBarContainer {
+                position: relative;
+                float: left;
+                height: 10rem;
+                width: 100%;
+                padding-top: 2rem;
+                box-sizing: border-box;
+                .numberBlock {
+                  position: relative;
+                  float: left;
+                  height: 5rem;
+                  line-height: 5rem;
+                  background: #E6E6E6;
+                  width: 25%;
+                  font-size: 2rem;
+                  text-align: center;
+                  margin-top: 1rem;
+                  color: @gray;
+                  box-shadow: 0.2rem 0.2rem 0.15rem 0 rgba(0,0,0,0.2);
+                  cursor: pointer;
+                  -webkit-transition: all 0.3s ease;
+                  &.selectedNumber {
+                    background: #92B391;
+                    color: white;
+                    height: 6rem;
+                    line-height: 6rem;
+                    margin-top: 0.5rem;
+                    box-shadow: 0.1rem 0.15rem 1rem 0 rgba(0,0,0,0.3);
+                  }
+                }
+              }
+            }
+          }
+          @media screen and (max-width: 420px) {
+            .detailContainer {
+              width: 35rem;
+              .placeholder {
+                position: relative;
+                height: 5rem;
+                line-height: 5rem;
+                width: 100%;
+                box-sizing: border-box;
+                border: none;
+                font-size: 2rem;
+                border-bottom: 0.1rem solid #e4e4e4;
+                color: @gray;
+                background: transparent;
+                font-weight: 100;
+                margin-top: 4rem;
+              }
+              .placeholder::-webkit-input-placeholder {
+                color: #C3C3C3;
+                font-size: 2rem;
+                font-family: @font;
+                font-weight: 100;
+              }
+            }
+          }
+          .thankYouContainer {
+            position: absolute;
+            height: 40rem;
+            width: 52rem;
+            top: 50%;
+            left: 50%;
+            background:white;
+            padding-top: 6rem;
+            box-sizing: border-box;
+            -webkit-transform: translate(-50%, -50%);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: opacity 0.3s ease-in-out;
+            text-align: center;
+            font-size: 3rem;
+            color: @gray;
+            font-weight: 100;
+            .thankYou {
+              position: relative;
+              float: left;
+              height: auto;
+              padding-top: 9rem;
+              width: 100%;
+            }
+            .name {
+              text-transform: capitalize;
+            }
+            .subDescription{
+              font-size: 2.2rem;
+            }
+            &.fadeIn {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          @media screen and (max-width: 420px) {
+            .thankYouContainer {
+                font-size:3rem;
+            }
+          }
+          &.fadeIn {
+            opacity: 1;
+          }
+        }
+      }
+      .leftPanel {
+        position: relative;
+        float: left;
+        height: 60rem;
+        padding-left: 0;
+        padding-right: 0;
+        background: #648A63;
+        .monthContainer {
+          position: absolute;
+          top: 3rem;
+          height: 7rem;
+          line-height: 7rem;
+          width: 100%;
+          padding-left: 2rem;
+          box-sizing: border-box;
+          overflow: auto;
+          .shadowBlock {
+            position: absolute;
+            height: 5rem;
+            top: 0.5rem;
+            left: 2rem;
+            right: 2rem;
+            box-shadow: 0.1rem 0.1rem 1rem 0.1rem rgba(0,0,0,0.2);
+          }
+          .month {
+            position: relative;
+            float: left;
+            font-size: 2.8rem;
+            color: @white;
+            text-align: center;
+            width: 32%;
+            height: 5rem;
+            line-height: 5rem;
+            background: #92B391;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            -webkit-transition: all 0.6s;
+          }
+          .active {
+            height: 6rem !important;
+            line-height: 6rem !important;
+            margin-top: 0;
+            background: @lightGray !important;
+            color: @gray !important;
+            box-shadow: 0.1rem 0.15rem 1rem 0 rgba(0,0,0,0.3) !important;
+          }
+        }
+        .dateContainer {
+          position: absolute;
+          top: 9rem;
+          height: 13rem;
+          line-height: 13rem;
+          width: 100%;
+          text-align: center;
+          font-size: 3.2rem;
+          font-weight: 100;
+          color: @white;
+        }
+        .dataContainer {
+          position: absolute;
+          top: 22rem;
+          bottom: 0;
+          left: 2rem;
+          right: 2rem;
+          .weekPanel {
+            position: relative;
+            float: left;
+            height: 4rem;
+            line-height: 4rem;
+            width: 100%;
+            font-weight: 400;
+            text-align: center;
+            color: @white;
+            .week {
+              position: relative;
+              float: left;
+              height: 100%;
+              width: 14.28%;
+            }
+          }
+          .datePanel {
+            position: absolute;
+            top: 6rem;
+            bottom: 2rem;
+            width: 100%;
+            color: @white;
+            overflow: hidden;
+            .dateBlock {
+              position: relative;
+              float: left;
+              height: 6rem;
+              line-height: 6rem;
+              width: 14.28%;
+              font-weight: 400;
+              text-align: center;
+              border-right: 0.1rem solid rgba(255,255,255,0.4);
+              border-bottom: 0.1rem solid rgba(255,255,255,0.4);
+              box-sizing: border-box;
+              -webkit-transition: all 0.6s;
+            }
+            .dateBlock:nth-child(7) {
+              border-right: none;
+            }
+            .dateBlock:nth-child(14) {
+              border-right: none;
+            }
+            .dateBlock:nth-child(21) {
+              border-right: none;
+            }
+            .dateBlock:nth-child(28) {
+              border-right: none;
+            }
+            .dateBlock:nth-child(n+29) {
+              border-bottom: none;
+            }
+            .dateBlock:nth-child(35) {
+              border-right: none;
+            }
+            .active {
+              background: #f7f5f6;
+              color: #7D7373;
+            }
+            .event {
+              background: #92B391;
+              cursor: pointer;
+            }
+            .selected {
+              background: @lightGray !important;
+              color: @gray !important;
+              box-shadow: 0.1rem 0.2rem 1rem 0 rgba(0,0,0,0.3) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 420px) {
+  .mainContainerCalendar {
+    padding:5rem  0;
+      .calendarBlock {
+        padding: 0;
+      }
+  }
+}

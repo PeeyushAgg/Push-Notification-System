@@ -1,44 +1,579 @@
 <!DOCTYPE html>
 <html>
-<head>
 
-  <title>XYZ</title>
+<head>
+  <title>New Leaf</title>
+  <meta charset="utf-8">
 
   <link rel="manifest" href="js/manifest.json">
-  <link rel="stylesheet" href="css/popup.css">
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../css/widget.css">
+  <link rel="stylesheet" type="text/css" href="../css/calendar.css">
+  <link rel="stylesheet" type="text/css" href="../css/index.css">
+   <link rel="stylesheet" type="text/css" href="../css/map.css">
+   <link rel="stylesheet" type="text/css" href="../css/popUpWindow.css">
+  <link rel="stylesheet" type="text/css" href="../css/screen.css">
 </head>
 
 <body>
+  <div class="mainContainer">
+    <div class="container-fluid">
+        <div class="btnSubscribe">
+            Subscribe Us
+        </div>
+      <div class="col-xs-12 col-sm-12 hidden-xs header">
+        <div class="logo col-sm-2">
+          <img src="../images/olive_logo.png">
+        </div>
+        <div class="navTabs col-sm-offset-4 col-sm-6">
+          <div class="col-xs-3 col-sm-2 item link" data-link="#home"><a>HOME</a></div>
+          <div class="col-xs-3 col-sm-2 item link" data-link="#menu"><a>MENU</a></div>
+          <div class="col-xs-3 col-sm-2 item link" data-link="#reservation"><a>RESERVATIONS</a></div>
+          <div class="col-xs-3 col-sm-2 item link" data-link="#blog"><a>BLOG</a></div>
+          <div class="col-xs-3 col-sm-2 item link" data-link="#event"><a>EVENT</a></div>
+          <div class="col-xs-3 col-sm-2 item link" data-link="#contact"><a>CONTACT</a></div>
+        </div>
 
-<div class="btnSubscribe" >
-      Subscribe/Update
-</div>
-<br><br>
-  <h1>Welcome to XYZ</h1>
+      </div>
 
-  <p>Click the above link to subscribe to our notifications.</p>
+      <div class="col-xs-12 hidden-sm hidden-md hidden-lg navbarHeader">
+          <div class="siteName">
+            New Leaf
+          </div>
+          <img src="../images/navbar.png" class="navLogo">
+          <div class="navTabContainer col-xs-12">
+            <div class="col-xs-12 item link" data-link="#home"><a>HOME</a></div>
+            <div class="col-xs-12 item link" data-link="#menu"><a>MENU</a></div>
+            <div class="col-xs-12 item link" data-link="#reservation"><a>RESERVATIONS</a></div>
+            <div class="col-xs-12 item link" data-link="#blog"><a>BLOG</a></div>
+            <div class="col-xs-12 item link" data-link="#event"><a>EVENT</a></div>
+            <div class="col-xs-12 item link" data-link="#contact"><a>CONTACT</a></div>
+          </div>
+      </div>
 
-  <div class="popUpWindow hide">
-  	<input style = "position: relative;float: left;padding: 0.5rem 1rem;margin-right:1rem;" class="name" placeholder="enter your name"></input>
-  	<input style = "position: relative;float: left;padding: 0.5rem 1rem;" class="phoneNumber" placeholder="enter your phone number"></input>
-  	<div class="btnSubmit " >
-  		Submit
-  	</div>
+      <div class="widgetContainer hidden-xs">
+        <div class="widgetNew first">
+          <a href="https://www.facebook.com/realboxed/" target="_blank">
+            <div class="image">
+              <img src="../images/59439.png">
+            </div>
+            <div class="text hide">
+              Facebook
+            </div>
+          </a>
+        </div>
+        <div class="widgetNew second">
+          <a href="https://twitter.com/realboxed?lang=en" target="_blank">
+            <div class="image">
+              <img src="../images/twitter.png">
+            </div>
+            <div class="text hide">
+              Twitter
+            </div>
+          </a>
+        </div>
+        <div class="widgetNew third">
+          <a href="https://www.instagram.com/realboxed/?hl=en" target="_blank">
+            <div class="image">
+              <img src="../images/instagramWidget.png">
+            </div>
+            <div class="text hide">
+              Instagram
+            </div>
+          </a>
+        </div>
+        <div class="widgetNew forth">
+          <a href="https://www.zomato.com/" target="_blank">
+            <div class="image">
+              <img src="../images/zomato.jpg">
+            </div>
+            <div class="text hide">
+              Zomato
+            </div>
+          </a>
+        </div>
+        <div class="widgetNew fifth">
+          <a href="https://www.tripadvisor.com/" target="_blank">
+            <div class="image">
+              <img src="../images/tripadvisor.png">
+            </div>
+            <div class="text hide">
+              Tripadvisor
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 homeScreen" id="home">
+        <div class="homeScreenContent"></div>
+      </div>
+      <div class="col-xs-12 col-sm-12 aboutUs">
+        <div class="aboutUsContent"></div>
+      </div>
+      <div class="col-xs-12 col-sm-12 fillerPage">
+        <div class="fillerPageContent"></div>
+      </div>
+      <div class="col-xs-12 col-sm-12 menuPage" id="menu">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4 menuDetails">
+          <div class="options"></div>
+        </div>
+        <div class="col-sm-8 col-sm-offset-2 menuContainer">
+          <div class="subOptions"></div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 fillerPanel">
+        <div class="fillerPanelContent"></div>
+      </div>
+      <div class="col-xs-12 col-sm-12 reservation" id="reservation">
+        <div class="reservationContent"></div>
+      </div>
+      <div class="col-xs-12 col-sm-12 moreAboutUs" id="blog">
+        <div class="underlay"></div>
+        <div class="moreAboutUsContent"></div>
+      </div>
+
+      <div class="mainContainerCalendar" id="event">
+        <div class="calendarBlock">
+          <div class="col-sm-12 col-xs-12 hidden-xs calendarContainer">
+            <div class="col-sm-4 col-xs-12 leftPanel">
+              <div class="monthContainer">
+                <div class="shadowBlock">
+                </div>
+                <div class="month" month-type="April">
+                  April
+                </div>
+                <div class="month active" month-type="May">
+                  May
+                </div>
+                <div class="month" month-type="June">
+                  June
+                </div>
+              </div>
+              <div class="dateContainer">
+
+              </div>
+              <div class="dataContainer">
+                <div class="weekPanel">
+                  <div class="week">
+                    SUN
+                  </div>
+                  <div class="week">
+                    MON
+                  </div>
+                  <div class="week">
+                    TUE
+                  </div>
+                  <div class="week">
+                    WED
+                  </div>
+                  <div class="week">
+                    THU
+                  </div>
+                  <div class="week">
+                    FRI
+                  </div>
+                  <div class="week">
+                    SAT
+                  </div>
+                </div>
+                <div class="datePanel">
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-8  col-xs-12 rightPanel">
+              <div class="eventContainer">
+              </div>
+              <div class="confirmationContainer">
+                <div class="detailContainer">
+                  <input class="placeholder name" placeholder="enter your name">
+                  <input class="placeholder number" placeholder="enter your contact number" maxlength="10" type="number">
+                  <div class="selectPersonContainer">
+                    <div class="text">
+                      Select number of person
+                    </div>
+                    <div class="personBarContainer">
+
+                    </div>
+                  </div>
+                  <div class="target"></div>
+                </div>
+                <div class="thankYouContainer">
+                  <div class="thankYou">
+                    Thank You <span class="name"></span>,
+                    <br>
+                    <span class="subDescription"> We will get back to you shortly.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-sm-12 col-xs-12 visible-xs calendarContainer">
+            <div class="col-sm-8  col-xs-12 rightPanel">
+              <div class="eventContainer">
+              </div>
+              <div class="confirmationContainer">
+                <div class="detailContainer">
+                  <input class="placeholder name small" placeholder="enter your name">
+                  <input class="placeholder number small" placeholder="enter your contact number" maxlength="10" type="number">
+                  <div class="selectPersonContainer">
+                    <div class="text">
+                      Select number of person
+                    </div>
+                    <div class="personBarContainer">
+
+                    </div>
+                  </div>
+                  <div class="target"></div>
+                </div>
+                <div class="thankYouContainer">
+                  <div class="thankYou">
+                    Thank You <span class="name"></span>,
+                    <br>
+                    <span class="subDescription"> We will get back to you shortly.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4 col-xs-12 leftPanel">
+              <div class="monthContainer">
+                <div class="shadowBlock">
+                </div>
+                <div class="month" month-type="March">
+                  March
+                </div>
+                <div class="month active" month-type="April">
+                  April
+                </div>
+                <div class="month" month-type="May">
+                  May
+                </div>
+              </div>
+              <div class="dateContainer">
+
+              </div>
+              <div class="dataContainer">
+                <div class="weekPanel">
+                  <div class="week">
+                    SUN
+                  </div>
+                  <div class="week">
+                    MON
+                  </div>
+                  <div class="week">
+                    TUE
+                  </div>
+                  <div class="week">
+                    WED
+                  </div>
+                  <div class="week">
+                    THU
+                  </div>
+                  <div class="week">
+                    FRI
+                  </div>
+                  <div class="week">
+                    SAT
+                  </div>
+                </div>
+                <div class="datePanel">
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-xs-12 col-sm-12 contactUs" id="contact">
+        <div class="contactUsContent"></div>
+      </div>
+      <div class="mapSection" >
+        <div class="col-sm-offset-1 col-sm-5 col-xs-12 leftSection">
+            <div class="col-sm-12 col-xs-12 logoContainer">
+                <img src="../images/rbl.png" class="logo">
+            </div>
+            <div class="adressContainer">
+                <div class="col-sm-5 col-xs-6 address">
+                    <h4>Our Address</h4>
+                     A-35, Sector 2 Noida,<br /> India-201301
+
+                    <h4>Contact</h4>
+                    <a href="tel:+919654454404"> 965-445-4404</a>
+                    <br/>
+                    <a href="http://realbox.in/www1/views/index.html" target="_blank" >websitehero@realbox.in</a>
+                    <br/>
+                    <div class="btnSendDirection">Send Direction</div>
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                    <h4>Business hours</h4>
+                    <p>Sunday to Wednesday
+                        <br/> 8:00 to 22:00</p>
+                    <p>Thursday to Saturday
+                        <br/>from 8:00 to 0:00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5 col-xs-12 rightSection">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.4504017372415!2d77.31048431508157!3d28.586261982436028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce45f7ea20819%3A0xad1c6b40438f7d41!2sA-35%2C+A+Block%2C+Sector+2%2C+Noida%2C+Uttar+Pradesh+201301%2C+India!5e0!3m2!1sen!2sca!4v1460720608189"
+                    width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+            </div>
+        </div>
+    </div>
+      <div class="col-xs-12 col-sm-12 footer">
+        <div class="footerContent"></div>
+      </div>
+    </div>
+    <div class="widgetFooter col-xs-offset-1 col-xs-10 visible-xs">
+        <div class="col-xs-offset-1 col-xs-2" style="padding: 0;height: 100%;">
+            <div class="widgetNewFooter first">
+                <a href="https://www.facebook.com/realboxed/" target="_blank">
+                    <div class="image">
+                        <img src="../images/59439.png">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-2" style="padding: 0;height: 100%;">
+            <div class="widgetNewFooter second">
+                <a href="https://twitter.com/realboxed?lang=en" target="_blank">
+                    <div class="image">
+                        <img src="../images/twitter.png">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-2" style="padding: 0;height: 100%;">
+            <div class="widgetNewFooter third">
+                <a href="https://www.instagram.com/realboxed/?hl=en" target="_blank">
+                    <div class="image">
+                        <img src="../images/instagramWidget.png">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-2" style="padding: 0;height: 100%;">
+            <div class="widgetNewFooter forth">
+                <a href="https://www.zomato.com/" target="_blank">
+                    <div class="image">
+                        <img src="../images/zomato.jpg">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-2" style="padding: 0;height: 100%;">
+            <div class="widgetNewFooter fifth">
+                <a href="https://www.tripadvisor.com/" target="_blank">
+                    <div class="image">
+                        <img src="../images/tripadvisor.png">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footerEnd">
+            <div class="leftContent col-sm-offset-1 col-sm-5 col-xs-12">
+                Copyright © 2016 Realbox Data Analytics Private Limited
+            </div>
+            <div class="rightContent col-sm-5 col-xs-12">
+                Handcrafted with love by Team <span style="border-bottom:1px solid #B3AEAE "><a href="http://realbox.in/www1/views/index.html">Realbox</a></span>
+            </div>
+    </div>
+
   </div>
-  
-     <script src="../scripts/jquery.js"></script>
-    <script src="../scripts/transit.js"></script>
-    <script src="../scripts/bootstrap.min.js"></script>
-    <script src="../scripts/highcharts.js"></script>
-    <script src="../scripts/jquery.tmpl.min.js"></script>
-    <script src="../scripts/jslinq.js"></script>
-    <script src="../scripts/moment.min.js"></script>
-    <script src="../scripts/superjson.js"></script>
-    <script src="../scripts/tocca.min.js"></script>
-  <script src="js/base.js"></script>
-  <script src="js/main.js"></script>
-   
+<div class="popUpWindow hide">
+    <div class="popup">
+        <img src="../images/close.png" class="closeIcon">
+        <div class="header">
+            Welcome to realbox
+        </div>
+        <div class="subHeader">
+            Subscribe and never miss a deal.
+        </div>
+        <div class="inputContainer">
+            <input class="userName" placeholder="enter your Name"></input>
+            <input class="phoneNumber" placeholder="your phone number"></input>
+            <input class="emailId" placeholder="your email id"></input>
+        </div>
+        <div class="btnSubmit">
+            <img src="../images/arrow.png" class="arrow">
+            <div class="display">Submit</div>
+        </div>
+    </div>
+</div>
+  <script id="optionsTemplate" type="text/x-jquery-tmpl">
+    <div class="col-xs-4 col-sm-4 selectMenuFor">{{html option}}</div>
+  </script>
 
+  <script id="subOptionsTemplate" type="text/x-jquery-tmpl">
+    {{each(i, value) subOptions}}
+    <div class="col-sm-6 col-xs-12 menuItems">
+      <div class="dishName">{{html dishName}} <span class="dishPrice">₹ {{html price}}</span></div>
+      <div class="dishDescription">{{html description}}
+      </div>
+    </div>
+    {{/each}}
+  </script>
+
+  <script id="homeScreenContentTemplate" type="text/x-jquery-tmpl">
+    <div class="underlay"></div>
+    <img src="{{html icon}}" class="restroIcon">
+  </script>
+
+  <script id="aboutUsContentTemplate" type="text/x-jquery-tmpl">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 contentBlock">
+      {{each(i, value) data}}
+      <div class="col-xs-12 col-sm-4 content">
+        <div class="logo">
+          <img src="{{html image}}" class="imageLogo">
+        </div>
+        <div class="heading">{{html heading}}</div>
+        <div class="textBox">{{html text}}</div>
+      </div>
+      {{/each}}
+    </div>
+  </script>
+
+  <script id="fillerPageContentTemplate" type="text/x-jquery-tmpl">
+    <div class="underlay"></div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 comment">"{{html text}}"</div>
+  </script>
+
+  <script id="fillerPanelContentTemplate" type="text/x-jquery-tmpl">
+    <div class="underlay"></div>
+    <div class="comment">"{{html text}}"</div>
+  </script>
+
+  <script id="reservationContentTemplate" type="text/x-jquery-tmpl">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 userInputPage">
+      {{each(i, value) inputData}}
+      <div class="col-xs-12 col-sm-12 inputOptions">
+        <div class="inputType">{{html inputType}}</div>
+        <input type="text" class="inputField" placeholder="{{html entries}}">
+      </div>
+      {{/each}}
+      <div class="col-xs-12 col-sm-12 btnBlock">
+        <div class="col-xs-12 col-sm-12 btnSumbit">SUBMIT</div>
+      </div>
+    </div>
+  </script>
+
+  <script id="moreAboutUsContentTemplate" type="text/x-jquery-tmpl">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 textContainer">
+      <div class="heading">{{html heading}}</div>
+      <div class="queto">{{html queto}}</div>
+      <div class="btnReadMore">{{html text}}</div>
+    </div>
+  </script>
+
+  <script id="contactUsContentTemplate" type="text/x-jquery-tmpl">
+    <div class="col-xs-12 col-sm-6  contactPage">
+      <div class="heading">{{html heading}}</div>
+      {{each(i, value) contactOptions}}
+      <div class="col-xs-4 col-sm-4 contactBy">
+        <div class="imageBlock">
+          <img src="../images/{{html icon}}.png" class="logo">
+        </div>
+        <div class="address">{{html address}}</div>
+        <div class="text">{{html text}}</div>
+      </div>
+      {{/each}}
+    </div>
+  </script>
+
+  <script id="footerContentTemplate" type="text/x-jquery-tmpl">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4 restroLogo">
+      <img src="{{html icon}}" class="restroIcon">
+    </div>
+  </script>
+
+
+
+  <script id="personBarTemplate" type="text/x-jquery-tmpl">
+    <div class="numberBlock">
+      {{html seat}}
+    </div>
+
+  </script>
+
+  <script id="calendarTemplate" type="text/x-jquery-tmpl">
+    {{each(i, value) dates}} {{if eventStatus == 1}}
+    <div class="dateBlock event" event-index="{{html i}}">
+      {{html date}}
+    </div>
+    {{else}}
+    <div class="dateBlock">
+      {{html date}}
+    </div>
+    {{/if}} {{/each}}
+  </script>
+
+  <script id="eventTemplate" type="text/x-jquery-tmpl">
+    <div class="eventImageContainer" style="background-image:url({{html image}})">
+      <div class="eventDate">
+        {{html eventDate}}
+      </div>
+    </div>
+    <div class="eventDataContainer">
+      <div class="data name">
+        {{html name}}
+        <img src="../images/events_24.png" class="icon">
+      </div>
+      <div class="data descriptionBlock">
+        <div class="description">
+          {{html description}}
+        </div>
+      </div>
+      <div class="data timing">
+        {{html time}}
+        <img src="../images/clock1.png" class="icon">
+      </div>
+      <div class="data addressBlock">
+        <div class="address">
+          {{html address}}
+        </div>
+        <img src="../images/location1.png" class="icon">
+      </div>
+    </div>
+    <div class="flipContainer">
+      <div class="btnBook">
+        <div class="face front">
+          BOOK NOW
+        </div>
+        <div class="face back">
+          I AM IN
+        </div>
+      </div>
+    </div>
+  </script>
+
+
+  <script src="../scripts/jquery.js"></script>
+  <script src="../scripts/transit.js"></script>
+  <script src="../scripts/bootstrap.min.js"></script>
+  <script src="../scripts/highcharts.js"></script>
+  <script src="../scripts/jquery.tmpl.min.js"></script>
+  <script src="../scripts/jslinq.js"></script>
+  <script src="../scripts/moment.min.js"></script>
+  <script src="../scripts/superjson.js"></script>
+  <script src="../scripts/tocca.min.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/base.js"></script>
+  <script src="../js/olive.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/index.js"></script>
+    <script src="../js/main.js"></script>
 </body>
+
 </html>

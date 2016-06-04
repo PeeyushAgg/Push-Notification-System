@@ -1,0 +1,153 @@
+//out: widget.css
+html{
+	font-size:10px;
+}
+@red: #EA0912;
+@darkRed: #cc0008;
+@yellow: #FDC121;
+@green: #1dc23b;
+@gold: #f17e21; //@gold: rgb(200,166,103);
+@pink: #f68889;
+@gray: #e4e2e3;
+@lightGray: #f7f5f6;
+@black: black;
+@white: white;
+@translucentBlack: rgba(0,0,0,.8);
+@translucentWhite: rgba(255,255,255,.5);
+@shadow: rgba(0,0,0,0.4);
+@borderBlack: 1px dotted rgba(0,0,0,.4);
+@borderWhite: 1px dotted rgba(255,255,255,.4);
+@h1: 1.4rem;
+@h2: 1.6rem;
+@h3: 1.8rem;
+@h4: 2rem;
+@h5: 2.2rem;
+@h6: 2.4rem;
+@bold: 400;
+@font: 'Roboto','sans-serif';
+
+.widgetContainer{
+    position: fixed;
+    top: 17.5rem;
+    right: 0;
+    height: 100%;
+    z-index: 10;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+.widgetNew{
+    position: absolute;;
+    right: 0;
+    border-top-left-radius:   0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    height: 4rem;
+    width: 4rem;
+    color: white;
+    .image{
+        position: relative;
+        float: left;
+        img{
+            height: 2rem;
+            position: relative;;
+            left: 1rem;
+            top: 1rem;
+        }
+    }
+    .text{
+	position: relative;
+    float: right;
+    line-height: 4rem;
+    color: white;
+    padding-right: 0.8rem;
+
+    }
+    &.first{
+        background: #3a5795;
+        top: 4rem;
+    }
+    &.second{
+        background:  #1da1f2;
+        top: 8.2rem;
+    }
+    &.third{
+        background: #125688;
+        top:12.4rem;
+    }
+    &.forth{
+            background: #cb202d;
+            top:16.6rem;
+    }
+    &.fifth{
+            background: #4B7E37;
+            top:20.8rem;
+            img{
+                height: 1.25rem;
+                top: 1rem;
+            }
+    }
+}
+}
+.widgetFooter{
+    position: relative;
+    height: 8rem;
+	font-size: 1.2rem;
+	padding: 0;
+	box-sizing: border-box;
+.widgetNewFooter{
+    position: relative;
+    height: 4rem;
+    width: 4rem;
+    color: white;
+    .image{
+        position: relative;
+        float: left;
+        img{
+            height: 2rem;
+            position: relative;;
+            left: 1rem;
+            top: 1rem;
+        }
+    }
+    .text{
+		position: relative;
+    float: right;
+    line-height: 4rem;
+    color: white;
+    padding-right: 0.8rem;
+    }
+    &.first{
+        background: #3a5795;
+				top: 50%;
+				left:50%;
+				-webkit-transform: translate(-50%,-50%);
+    }
+    &.second{
+        background:  #1da1f2;
+		top: 50%;
+		left:50%;
+		-webkit-transform: translate(-50%,-50%);
+    }
+    &.third{
+        background: #125688;
+		top: 50%;
+		left:50%;
+		-webkit-transform: translate(-50%,-50%);
+    }
+    &.forth{
+            background: #cb202d;
+			top: 50%;
+			left:50%;
+			-webkit-transform: translate(-50%,-50%);
+    }
+    &.fifth{
+            background: #4B7E37;
+						top: 50%;
+						left:50%;
+						-webkit-transform: translate(-50%,-50%);
+
+            img{
+                height: 1.25rem;
+                top: 1.37rem;
+            }
+    }
+}
+}

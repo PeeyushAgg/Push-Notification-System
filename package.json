@@ -1,6 +1,4 @@
 {
-
-{
   "name": "pushNotification",
   "version": "1.0.0",
   "description": "",
@@ -8,11 +6,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
+    "express-force-ssl": "^0.3.2",
     "mongodb": "^2.1.18",
     "requests": "^2.15.1"
-   
   }
-}
-
 }

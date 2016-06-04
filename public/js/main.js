@@ -1,3 +1,6 @@
+
+var eventToUse = 'tap';
+
 /*
 *
 *  Push Notifications codelab
@@ -49,27 +52,25 @@ var key_save = new function() {
 //========================================================
 
 
-$(document).ready(function() {  
+$(document).ready(function() {
 
 // if(("serviceWorker" in navigator)){
 // 	$("popUpWindow").removeClass("hide");
 // 	console.log("hello");
 // }
 
-bind(".btnSubscribe", function(){
-	$(".popUpWindow").removeClass("hide");
-	$(".btnSubscribe").addClass("hide");
-});
+
 
 bind('.btnSubmit', function(){
-  
+$('.popUpWindow').addClass('hide');
 var gcm_key = {};
-gcm_key.name = $(".name").val();
+gcm_key.name = $(".userName").val();
 gcm_key.phone = $(".phoneNumber").val();
+gcm_key.emailId = $(".emailId").val();
 
 if ('serviceWorker' in navigator) {
 console.log('Service Worker is supported');
-navigator.serviceWorker.register('../views/sw.js').then(function(reg) {
+navigator.serviceWorker.register('/views/sw.js').then(function(reg) {
 console.log('Service Worker is ready :^)', reg);
 console.log(reg);
 
@@ -82,8 +83,6 @@ console.log('endpoint:', sub.endpoint);
 $(".popUpWindow").addClass("hide");
 var r = sub.endpoint.split("/")[5];
 gcm_key._id = r;
-console.log(gcm_key);
-
 key_save.saveKey(gcm_key, function(err){
     console.log(err);
   })
@@ -98,7 +97,7 @@ var key_save = new function() {
     }
 }
 
-}) 
+})
 
 });
 

@@ -1,5 +1,5 @@
 
-$(document).ready(function() { 
+$(document).ready(function() {
 makeTemplates();
 
 var msg_details = {}
@@ -28,8 +28,8 @@ var msg_details = {}
                       console.log(msg_details);
 
 		});
-		
-		
+
+
 
 	});
 
@@ -38,11 +38,11 @@ bind('.btnSave', function(){
 	//console.log
 	msg_details.data.text = $('.input').val();
 	msg_details.data.url = $('.url').val();
-    console.log(msg_details) 
+    console.log(msg_details)
 	msgSend.postMsg(msg_details, function(err){
 		console.log(err);
 	})
-})   
+})
 
 });
 

@@ -1,0 +1,126 @@
+html {
+  font-size: 10px;
+}
+.widgetContainer {
+  position: fixed;
+  top: 17.5rem;
+  right: 0;
+  height: 100%;
+  z-index: 10;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.widgetContainer .widgetNew {
+  position: absolute;
+  right: 0;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  height: 4rem;
+  width: 4rem;
+  color: white;
+}
+.widgetContainer .widgetNew .image {
+  position: relative;
+  float: left;
+}
+.widgetContainer .widgetNew .image img {
+  height: 2rem;
+  position: relative;
+  left: 1rem;
+  top: 1rem;
+}
+.widgetContainer .widgetNew .text {
+  position: relative;
+  float: right;
+  line-height: 4rem;
+  color: white;
+  padding-right: 0.8rem;
+}
+.widgetContainer .widgetNew.first {
+  background: #3a5795;
+  top: 4rem;
+}
+.widgetContainer .widgetNew.second {
+  background: #1da1f2;
+  top: 8.2rem;
+}
+.widgetContainer .widgetNew.third {
+  background: #125688;
+  top: 12.4rem;
+}
+.widgetContainer .widgetNew.forth {
+  background: #cb202d;
+  top: 16.6rem;
+}
+.widgetContainer .widgetNew.fifth {
+  background: #4B7E37;
+  top: 20.8rem;
+}
+.widgetContainer .widgetNew.fifth img {
+  height: 1.25rem;
+  top: 1rem;
+}
+.widgetFooter {
+  position: relative;
+  height: 8rem;
+  font-size: 1.2rem;
+  padding: 0;
+  box-sizing: border-box;
+}
+.widgetFooter .widgetNewFooter {
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  color: white;
+}
+.widgetFooter .widgetNewFooter .image {
+  position: relative;
+  float: left;
+}
+.widgetFooter .widgetNewFooter .image img {
+  height: 2rem;
+  position: relative;
+  left: 1rem;
+  top: 1rem;
+}
+.widgetFooter .widgetNewFooter .text {
+  position: relative;
+  float: right;
+  line-height: 4rem;
+  color: white;
+  padding-right: 0.8rem;
+}
+.widgetFooter .widgetNewFooter.first {
+  background: #3a5795;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+.widgetFooter .widgetNewFooter.second {
+  background: #1da1f2;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+.widgetFooter .widgetNewFooter.third {
+  background: #125688;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+.widgetFooter .widgetNewFooter.forth {
+  background: #cb202d;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+.widgetFooter .widgetNewFooter.fifth {
+  background: #4B7E37;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+.widgetFooter .widgetNewFooter.fifth img {
+  height: 1.25rem;
+  top: 1.37rem;
+}

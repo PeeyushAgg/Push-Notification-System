@@ -1,0 +1,507 @@
+html {
+  font-size: 10px;
+}
+input::-webkit-input-placeholder {
+  font-family: 'Roboto', 'sans-serif';
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: black;
+}
+input {
+  font-family: 'Roboto', 'sans-serif';
+  color: #C3C3C3;
+}
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+.show {
+  display: block !important;
+}
+.hide {
+  display: none;
+}
+.target {
+  color: red;
+  text-transform: uppercase;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.mainContainerCalendar {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 100%;
+  background: #E2E0E0;
+  font-family: 'Roboto', 'sans-serif';
+  font-weight: 300;
+  padding: 10rem 12rem 0;
+}
+.mainContainerCalendar .calendarBlock {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 10rem;
+  box-sizing: border-box;
+  font-family: 'Roboto', 'sans-serif';
+}
+.mainContainerCalendar .calendarBlock .calendarContainer {
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: 0.1rem 0.1rem 2rem 0.1rem rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel {
+  position: relative;
+  float: left;
+  height: 60rem;
+  padding-left: 0;
+  padding-right: 0;
+  background: #f7f5f6;
+  overflow: hidden;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer ::-webkit-scrollbar {
+  display: none;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventImageContainer {
+  position: relative;
+  float: left;
+  height: 40rem;
+  width: 100%;
+  background-image: url("../images/eventOne.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventImageContainer .eventDate {
+  position: absolute;
+  bottom: 0;
+  height: 7rem;
+  line-height: 7rem;
+  padding-left: 2rem;
+  width: 100%;
+  font-size: 2.8rem;
+  font-weight: 100;
+  box-sizing: border-box;
+  color: #ffffff;
+  background: linear-gradient(to right, rgba(252, 247, 252, 0.84) 0%, rgba(3, 3, 3, 0.84) 0%, rgba(3, 3, 3, 0.18) 100%);
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer {
+  position: relative;
+  float: left;
+  height: 20rem;
+  width: 100%;
+  color: #645c5c;
+  font-size: 2rem;
+  padding-top: 2rem;
+  padding-left: 6rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer .data {
+  position: relative;
+  float: left;
+  height: 4rem;
+  width: 100%;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer .data .icon {
+  position: absolute;
+  left: -4rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer .name {
+  height: 3rem;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer .descriptionBlock {
+  font-size: 1.6rem;
+  height: 6.9rem !important;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer .descriptionBlock .description {
+  position: absolute;
+  top: 0;
+  bottom: 0.5rem;
+  width: 100%;
+  overflow: auto;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer .timing {
+  line-height: 3.5rem;
+  height: 3.5rem;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer .addressBlock {
+  line-height: 4rem;
+  height: 4rem;
+  font-size: 1.6rem;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer .addressBlock .address {
+  position: absolute;
+  top: 0;
+  bottom: 0.5rem;
+  width: 100%;
+  overflow: auto;
+}
+@media screen and (max-width: 420px) {
+  .mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .eventDataContainer .addressBlock .address {
+    position: absolute;
+    top: 1rem;
+    bottom: 0.5rem;
+    width: 65%;
+    line-height: 2.2rem;
+    overflow: auto;
+  }
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .flipContainer {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  height: 4rem;
+  line-height: 4rem;
+  width: 10rem;
+  perspective: 1000;
+  z-index: 50;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .flipContainer .btnBook {
+  position: absolute;
+  height: 4rem;
+  line-height: 4rem;
+  width: 10rem;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 400;
+  -webkit-transition: 0.3s;
+  -webkit-transform-style: preserve-3d;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .flipContainer .btnBook .face {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .flipContainer .btnBook .front {
+  z-index: 10;
+  -webkit-transform: rotateY(0deg);
+  background: #92B391;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .flipContainer .btnBook .back {
+  -webkit-transform: rotateY(180deg);
+  background: #92B391;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .flipContainer .btnBook.rotate {
+  -webkit-transform: rotateY(180deg);
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .flipContainer.hideBtn {
+  opacity: 0;
+}
+@media screen and (max-width: 420px) {
+  .mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .eventContainer .flipContainer {
+    bottom: 1rem;
+  }
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer {
+  position: absolute;
+  height: 40rem;
+  width: 50rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer .placeholder {
+  position: relative;
+  height: 5rem;
+  line-height: 5rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  font-size: 4rem;
+  border-bottom: 0.1rem solid #e4e4e4;
+  color: #645c5c;
+  background: transparent;
+  font-weight: 100;
+  margin-top: 4rem;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer .placeholder::-webkit-input-placeholder {
+  color: #C3C3C3;
+  font-size: 4rem;
+  font-family: 'Roboto', 'sans-serif';
+  font-weight: 100;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer .selectPersonContainer {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding-top: 4rem;
+  box-sizing: border-box;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer .selectPersonContainer .text {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 2.4rem;
+  color: #645c5c;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer .selectPersonContainer .personBarContainer {
+  position: relative;
+  float: left;
+  height: 10rem;
+  width: 100%;
+  padding-top: 2rem;
+  box-sizing: border-box;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer .selectPersonContainer .personBarContainer .numberBlock {
+  position: relative;
+  float: left;
+  height: 5rem;
+  line-height: 5rem;
+  background: #E6E6E6;
+  width: 25%;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  color: #645c5c;
+  box-shadow: 0.2rem 0.2rem 0.15rem 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer .selectPersonContainer .personBarContainer .numberBlock.selectedNumber {
+  background: #92B391;
+  color: white;
+  height: 6rem;
+  line-height: 6rem;
+  margin-top: 0.5rem;
+  box-shadow: 0.1rem 0.15rem 1rem 0 rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 420px) {
+  .mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer {
+    width: 35rem;
+  }
+  .mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer .placeholder {
+    position: relative;
+    height: 5rem;
+    line-height: 5rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 2rem;
+    border-bottom: 0.1rem solid #e4e4e4;
+    color: #645c5c;
+    background: transparent;
+    font-weight: 100;
+    margin-top: 4rem;
+  }
+  .mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .detailContainer .placeholder::-webkit-input-placeholder {
+    color: #C3C3C3;
+    font-size: 2rem;
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: 100;
+  }
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .thankYouContainer {
+  position: absolute;
+  height: 40rem;
+  width: 52rem;
+  top: 50%;
+  left: 50%;
+  background: white;
+  padding-top: 6rem;
+  box-sizing: border-box;
+  -webkit-transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  text-align: center;
+  font-size: 3rem;
+  color: #645c5c;
+  font-weight: 100;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .thankYouContainer .thankYou {
+  position: relative;
+  float: left;
+  height: auto;
+  padding-top: 9rem;
+  width: 100%;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .thankYouContainer .name {
+  text-transform: capitalize;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .thankYouContainer .subDescription {
+  font-size: 2.2rem;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .thankYouContainer.fadeIn {
+  opacity: 1;
+  visibility: visible;
+}
+@media screen and (max-width: 420px) {
+  .mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer .thankYouContainer {
+    font-size: 3rem;
+  }
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .rightPanel .confirmationContainer.fadeIn {
+  opacity: 1;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel {
+  position: relative;
+  float: left;
+  height: 60rem;
+  padding-left: 0;
+  padding-right: 0;
+  background: #648A63;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .monthContainer {
+  position: absolute;
+  top: 3rem;
+  height: 7rem;
+  line-height: 7rem;
+  width: 100%;
+  padding-left: 2rem;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .monthContainer .shadowBlock {
+  position: absolute;
+  height: 5rem;
+  top: 0.5rem;
+  left: 2rem;
+  right: 2rem;
+  box-shadow: 0.1rem 0.1rem 1rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .monthContainer .month {
+  position: relative;
+  float: left;
+  font-size: 2.8rem;
+  color: #ffffff;
+  text-align: center;
+  width: 32%;
+  height: 5rem;
+  line-height: 5rem;
+  background: #92B391;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: all 0.6s;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .monthContainer .active {
+  height: 6rem !important;
+  line-height: 6rem !important;
+  margin-top: 0;
+  background: #f7f5f6 !important;
+  color: #645c5c !important;
+  box-shadow: 0.1rem 0.15rem 1rem 0 rgba(0, 0, 0, 0.3) !important;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dateContainer {
+  position: absolute;
+  top: 9rem;
+  height: 13rem;
+  line-height: 13rem;
+  width: 100%;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 100;
+  color: #ffffff;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer {
+  position: absolute;
+  top: 22rem;
+  bottom: 0;
+  left: 2rem;
+  right: 2rem;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .weekPanel {
+  position: relative;
+  float: left;
+  height: 4rem;
+  line-height: 4rem;
+  width: 100%;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .weekPanel .week {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 14.28%;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel {
+  position: absolute;
+  top: 6rem;
+  bottom: 2rem;
+  width: 100%;
+  color: #ffffff;
+  overflow: hidden;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .dateBlock {
+  position: relative;
+  float: left;
+  height: 6rem;
+  line-height: 6rem;
+  width: 14.28%;
+  font-weight: 400;
+  text-align: center;
+  border-right: 0.1rem solid rgba(255, 255, 255, 0.4);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  -webkit-transition: all 0.6s;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .dateBlock:nth-child(7) {
+  border-right: none;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .dateBlock:nth-child(14) {
+  border-right: none;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .dateBlock:nth-child(21) {
+  border-right: none;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .dateBlock:nth-child(28) {
+  border-right: none;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .dateBlock:nth-child(n+29) {
+  border-bottom: none;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .dateBlock:nth-child(35) {
+  border-right: none;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .active {
+  background: #f7f5f6;
+  color: #7D7373;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .event {
+  background: #92B391;
+  cursor: pointer;
+}
+.mainContainerCalendar .calendarBlock .calendarContainer .leftPanel .dataContainer .datePanel .selected {
+  background: #f7f5f6 !important;
+  color: #645c5c !important;
+  box-shadow: 0.1rem 0.2rem 1rem 0 rgba(0, 0, 0, 0.3) !important;
+}
+@media screen and (max-width: 420px) {
+  .mainContainerCalendar {
+    padding: 5rem  0;
+  }
+  .mainContainerCalendar .calendarBlock {
+    padding: 0;
+  }
+}

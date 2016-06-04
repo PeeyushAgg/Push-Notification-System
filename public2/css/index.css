@@ -1,0 +1,103 @@
+html {
+  font-size: 10px;
+  font-family: 'Roboto', 'sans-serif';
+  font-weight: 300;
+}
+body {
+  margin: 0;
+  font-size: 1.6rem;
+}
+input {
+  font-weight: 300;
+  font-family: 'Roboto', 'sans-serif';
+  color: white;
+}
+input::-webkit-input-placeholder {
+  font-family: 'Roboto', 'sans-serif';
+  font-weight: 200;
+}
+
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.mainContainer {
+  position: absolute;
+  min-height: 100%;
+  height: auto;
+  width: 100%;
+  background: url('../images/pattern.png') repeat left top;
+  background-color: #2E4C74;
+  opacity: 0.9;
+}
+.mainContainer .inputContainer {
+  position: relative;
+  float: left;
+  padding: 2rem;
+}
+@media screen and (max-width: 760px) {
+  .mainContainer .inputContainer {
+    padding: 1rem;
+  }
+}
+.mainContainer .inputContainer input {
+  position: relative;
+  float: left;
+  height: 6rem;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 300;
+  text-decoration: none;
+  outline: none;
+}
+@media screen and (max-width: 760px) {
+  .mainContainer .inputContainer input {
+    width: 58.33333333%;
+  }
+}
+.mainContainer .inputContainer .btnSave {
+  position: relative;
+  float: left;
+  width: 12rem;
+  padding: 1rem 0;
+  text-align: center;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.4rem;
+  /* background: white; */
+  color: white;
+}
+@media screen and (max-width: 760px) {
+  .mainContainer .inputContainer .btnSave {
+    margin-top: 1.5rem;
+    margin-left: 2.8rem;
+    width: 33.33333333%;
+  }
+}
+.mainContainer .employeeContainer {
+  position: absolute;
+  top: 9rem;
+  bottom: 2rem;
+  left: 2rem;
+  overflow-y: scroll;
+  right: 2rem;
+}
+.mainContainer .employeeContainer .employee {
+  position: relative;
+  float: left;
+  width: 100%;
+  line-height: 3rem;
+  color: white;
+}
+.mainContainer .employeeContainer .employee .name {
+  position: relative;
+  float: left;
+  width: 100%;
+}

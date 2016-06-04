@@ -1,0 +1,100 @@
+//out:popUpWindow.css
+.hide {
+  display: none;
+  .mainContainer{
+  ::-webkit-scrollbar{
+      display: none;
+  }
+  }
+}
+input::-webkit-input-placeholder{
+    color: rgba(255,255,255,0.5);
+}
+.popUpWindow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 32, 34, 0.7);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    z-index: 500;
+
+    .popup {
+        position: absolute;
+        width: 35rem;
+        height: 35rem;
+        background: #E9573E;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 0.4rem;
+        box-shadow: 0.1rem 0.1rem 2rem 0.1rem rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        .closeIcon{
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 3rem;
+            cursor: pointer;
+        }
+        .header{
+            position: relative;
+            float: left;
+            width: 100%;
+            text-align: center;
+            line-height: 4rem;
+            font-size: 3rem;
+        }
+        .subHeader{
+            position: relative;
+            float: left;
+            width: 100%;
+            text-align: center;
+            line-height: 4rem;
+            font-size: 2rem;
+        }
+        .inputContainer{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 85%;
+            input{
+                margin: 0.5rem;
+                outline: none;
+                border: none;
+                border-bottom: 0.1rem solid rgba(255,255,255,0.5);
+                padding: 0 0.5rem;
+                display: block;
+                margin: 0.5rem auto;
+                line-height: 4.4rem;
+                color:white;
+                width: 100%;
+                background: inherit;
+
+            }
+        }
+        .btnSubmit{
+            position: absolute;
+            left: 50%;
+            bottom: 2rem;
+            transform: translateX(-50%);
+            width: 100%;
+            cursor: pointer;
+            .arrow{
+                display: block;
+                margin: 0 auto;
+                height: 4rem;
+            }
+            .display{
+                position: relative;
+                float: left;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+}

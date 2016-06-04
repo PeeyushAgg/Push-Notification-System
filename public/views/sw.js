@@ -18,11 +18,14 @@
 */
 //Version 0.1
 
+var eventToUse = 'tap';
+var appUrl = 'https://192.168.1.236:18000/';
+
 'use strict';
 
 console.log('Started', self);
 
-var url = "www.realbox.in"; 
+var url = "www.realbox.in";
 
 self.addEventListener('install', function(event) {
   self.skipWaiting();
@@ -62,8 +65,8 @@ self.addEventListener('push', function(event) {
         self.registration.showNotification(data.title, {
           body: data.body,
           //icon: 'https://letreach.com/assets/letreach/img/ltr-icon.png?url=abcd'
-          icon: "http://localhost:18000/images/realbox.png"
-          
+          icon: "https://192.168.8.236:18000/images/realbox.png"
+
         });
 
         url = data.url;

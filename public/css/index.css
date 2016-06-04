@@ -1,103 +1,557 @@
 html {
   font-size: 10px;
-  font-family: 'Roboto', 'sans-serif';
-  font-weight: 300;
 }
 body {
   margin: 0;
   font-size: 1.6rem;
 }
-input {
-  font-weight: 300;
-  font-family: 'Roboto', 'sans-serif';
-  color: white;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-input::-webkit-input-placeholder {
-  font-family: 'Roboto', 'sans-serif';
-  font-weight: 200;
+a:hover {
+  text-decoration: none;
+  color: inherit;
 }
-
-
-.hide {
-  display: none;
+a:focus {
+  text-decoration: none;
+  color: inherit;
 }
-.show {
-  display: block;
+.color {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, rgba(0, 0, 0, 0))) !important;
 }
 .mainContainer {
   position: absolute;
-  min-height: 100%;
+  font-family: 'Lato', sans-serif;
   height: auto;
   width: 100%;
-  background: url('../images/pattern.png') repeat left top;
-  background-color: #2E4C74;
-  opacity: 0.9;
+  overflow: hidden;
 }
-.mainContainer .inputContainer {
-  position: relative;
-  float: left;
-  padding: 2rem;
-}
-@media screen and (max-width: 760px) {
-  .mainContainer .inputContainer {
-    padding: 1rem;
-  }
-}
-.mainContainer .inputContainer input {
-  position: relative;
-  float: left;
-  height: 6rem;
+.mainContainer .btnSubscribe {
+  position: fixed;
+  z-index: 500;
+  top: 50%;
+  transform: translateY(-50%);
   padding: 1rem;
+  box-sizing: border-box;
+  background: #E9573E;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  color: white;
+  box-shadow: 0.1rem 0.1rem 2rem 0.1rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.mainContainer .header {
+  position: fixed;
+  height: 8rem;
+  line-height: 8rem;
+  padding: 0;
+  z-index: 10;
   background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  font-weight: 300;
-  text-decoration: none;
-  outline: none;
 }
-@media screen and (max-width: 760px) {
-  .mainContainer .inputContainer input {
-    width: 58.33333333%;
-  }
+.mainContainer .header img {
+  height: 6rem;
+  display: block;
+  margin: 1rem auto 0;
 }
-.mainContainer .inputContainer .btnSave {
+.mainContainer .header .item {
   position: relative;
   float: left;
-  width: 12rem;
-  padding: 1rem 0;
+  font-size: 1.2rem;
+  color: #FFF;
+  padding: 0;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
   text-align: center;
-  margin-left: 2rem;
-  margin-top: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0.4rem;
-  /* background: white; */
-  color: white;
+  cursor: pointer;
 }
-@media screen and (max-width: 760px) {
-  .mainContainer .inputContainer .btnSave {
-    margin-top: 1.5rem;
-    margin-left: 2.8rem;
-    width: 33.33333333%;
+.mainContainer .header .item:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, rgba(0, 0, 0, 0)));
+}
+.mainContainer .header.bottom {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, rgba(0, 0, 0, 0)));
+}
+.mainContainer .underlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: #B1ABAB;
+  opacity: 0.3;
+  left: 0;
+  -webkit-filter: blur(0.4rem);
+}
+.mainContainer .container-fluid {
+  position: relative;
+  padding: 0;
+}
+.mainContainer .container-fluid .homeScreen {
+  position: relative;
+  height: 50rem;
+  background-color: pink;
+  background-image: url("../images/background3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+.mainContainer .container-fluid .homeScreen .header {
+  height: 5rem;
+  line-height: 5rem;
+  padding: 0;
+}
+.mainContainer .container-fluid .homeScreen .header .item {
+  position: relative;
+  float: left;
+  font-size: 1.2rem;
+  color: #FFF;
+  padding: 0;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+.mainContainer .container-fluid .homeScreen .restroIcon {
+  position: absolute;
+  height: 20rem;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+.mainContainer .container-fluid .navbarHeader {
+  position: fixed;
+  height: 6rem;
+  line-height: 6rem;
+  width: 100%;
+  z-index: 400;
+  background: white;
+}
+.mainContainer .container-fluid .navbarHeader .siteName {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: auto;
+  color: #626262;
+  font-size: 2rem;
+}
+.mainContainer .container-fluid .navbarHeader .navLogo {
+  position: absolute;
+  right: 2rem;
+  height: 4rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+}
+.mainContainer .container-fluid .navbarHeader .navTabContainer {
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  height: 24rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  background: rgba(27, 22, 28, 0.952941);
+}
+.mainContainer .container-fluid .navbarHeader .navTabContainer.showNavOption {
+  opacity: 1;
+  visibility: visible;
+}
+.mainContainer .container-fluid .navbarHeader .col-xs-12.item.link {
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1.4rem;
+  color: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+.mainContainer .container-fluid .aboutUs {
+  position: relative;
+  height: auto;
+  background-color: #EEEEEE;
+}
+.mainContainer .container-fluid .aboutUs .contentBlock {
+  position: relative;
+  height: auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.mainContainer .container-fluid .aboutUs .contentBlock .content {
+  position: relative;
+  height: auto;
+  text-align: center;
+}
+.mainContainer .container-fluid .aboutUs .contentBlock .content .logo {
+  position: relative;
+  height: 12rem;
+  float: left;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.mainContainer .container-fluid .aboutUs .contentBlock .content .logo .imageLogo {
+  position: absolute;
+  height: 12rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+}
+.mainContainer .container-fluid .aboutUs .contentBlock .content .heading {
+  font-size: 1.4rem;
+  position: relative;
+  font-weight: 600;
+  float: left;
+  width: 100%;
+}
+.mainContainer .container-fluid .aboutUs .contentBlock .content .textBox {
+  position: relative;
+  font-size: 1.4rem;
+  float: left;
+  padding-top: 1rem;
+  width: 100%;
+}
+.mainContainer .container-fluid .fillerPage {
+  position: relative;
+  height: 40rem;
+  line-height: 40rem;
+  background-image: url("../images/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+.mainContainer .container-fluid .fillerPage .comment {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+.mainContainer .container-fluid .menuPage {
+  position: relative;
+  height: auto;
+  background-image: url("../images/olive_greyBg2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10rem 0;
+}
+.mainContainer .container-fluid .menuPage .menuDetails {
+  position: relative;
+  height: 5rem;
+  line-height: 5rem;
+  padding: 0;
+}
+.mainContainer .container-fluid .menuPage .menuDetails .selectMenuFor {
+  position: relative;
+  text-align: center;
+  color: #9A9899;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+.mainContainer .container-fluid .menuPage .menuDetails .selectMenuFor.selected {
+  color: #131311;
+}
+.mainContainer .container-fluid .menuPage .menuContainer {
+  position: relative;
+  height: auto;
+  margin-top: 4rem;
+  float: left;
+}
+.mainContainer .container-fluid .menuPage .menuContainer .menuItems {
+  position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  float: left;
+}
+.mainContainer .container-fluid .menuPage .menuContainer .menuItems .dishName {
+  position: relative;
+  font-weight: 600;
+  color: #292927;
+  font-size: 1.4rem;
+}
+.mainContainer .container-fluid .menuPage .menuContainer .menuItems .dishName .dishPrice {
+  position: relative;
+  color: #131311;
+  font-weight: 600;
+  float: right;
+}
+.mainContainer .container-fluid .menuPage .menuContainer .menuItems .dishDescription {
+  position: relative;
+  width: 100%;
+  color: #B3B3B3;
+  font-size: 1.4rem;
+  padding-right: 12rem;
+  padding-top: 0.5rem;
+}
+.mainContainer .container-fluid .fillerPanel {
+  position: relative;
+  height: 40rem;
+  line-height: 40rem;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.mainContainer .container-fluid .fillerPanel .comment {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+.mainContainer .container-fluid .reservation {
+  position: relative;
+  height: auto;
+  padding-bottom: 6.5rem;
+  padding-top: 8rem;
+  background-image: url("../images/olive_greyBg2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.mainContainer .container-fluid .reservation .userInputPage {
+  position: relative;
+  height: auto;
+}
+.mainContainer .container-fluid .reservation .userInputPage .inputOptions {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 2rem;
+}
+.mainContainer .container-fluid .reservation .userInputPage .inputOptions .inputType {
+  position: relative;
+  height: 3rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+@media screen and (max-width: 480px) {
+  .mainContainer .container-fluid .reservation .userInputPage .inputOptions .inputType {
+    font-size: 1.1rem;
   }
 }
-.mainContainer .employeeContainer {
-  position: absolute;
-  top: 9rem;
-  bottom: 2rem;
-  left: 2rem;
-  overflow-y: scroll;
-  right: 2rem;
+.mainContainer .container-fluid .reservation .userInputPage .inputOptions .inputField {
+  position: relative;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  border: 0.1rem solid #333;
+  border-radius: 0.4rem;
+  height: 5rem;
+  padding: 0.5rem;
+  outline: 0;
+  color: #5F5A5A;
 }
-.mainContainer .employeeContainer .employee {
+.mainContainer .container-fluid .reservation .userInputPage .inputOptions .inputField::-webkit-input-placeholder {
+  color: #BFB7B7!important;
+}
+.mainContainer .container-fluid .reservation .userInputPage .inputOptions:nth-child(3) {
+  width: 50%;
+}
+.mainContainer .container-fluid .reservation .userInputPage .inputOptions:nth-child(4) {
+  width: 50%;
+}
+.mainContainer .container-fluid .reservation .userInputPage .inputOptions:nth-child(5) {
+  width: 50%;
+}
+.mainContainer .container-fluid .reservation .userInputPage .inputOptions:nth-child(6) {
+  width: 50%;
+}
+.mainContainer .container-fluid .reservation .userInputPage .btnBlock {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 2rem;
+}
+.mainContainer .container-fluid .reservation .userInputPage .btnBlock .btnSumbit {
   position: relative;
   float: left;
   width: 100%;
-  line-height: 3rem;
+  text-align: center;
+  height: 5rem;
+  line-height: 5rem;
+  border: 0.1rem solid #333;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  background: black;
   color: white;
+  cursor: pointer;
 }
-.mainContainer .employeeContainer .employee .name {
+.mainContainer .container-fluid .moreAboutUs {
+  position: relative;
+  height: 45rem;
+  background-image: url("../images/2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.mainContainer .container-fluid .moreAboutUs .textContainer {
+  position: relative;
+  height: auto;
+  margin-top: 15rem;
+}
+.mainContainer .container-fluid .moreAboutUs .textContainer .heading {
+  position: relative;
+  text-align: center;
+  font-size: 2.4rem;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+.mainContainer .container-fluid .moreAboutUs .textContainer .queto {
+  position: relative;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #fff;
+  padding: 0.5rem;
+}
+.mainContainer .container-fluid .moreAboutUs .textContainer .btnReadMore {
+  height: 4rem;
+  position: relative;
+  width: 20rem;
+  left: 50%;
+  margin-left: -10rem;
+  line-height: 4rem;
+  margin-top: 4rem;
+  border: 0.2rem solid #fff;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+.mainContainer .container-fluid .moreAboutUs .textContainer .btnReadMore:hover {
+  background: #fff;
+  color: #000;
+}
+.mainContainer .container-fluid .contactUs {
+  position: relative;
+  height: auto;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  background-image: url("../images/olive_greyBg2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.mainContainer .container-fluid .contactUs .contactPage {
+  position: relative;
+  height: auto;
+  padding: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+}
+.mainContainer .container-fluid .contactUs .contactPage .heading {
+  position: relative;
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+.mainContainer .container-fluid .contactUs .contactPage .contactBy {
+  position: relative;
+  height: 15rem;
+}
+.mainContainer .container-fluid .contactUs .contactPage .contactBy .btnSend {
+  position: absolute;
+  bottom: 3.8rem;
+  height: 4rem;
+  line-height: 4rem;
+  color: white;
+  width: 16rem;
+  background: #648A63;
+  text-align: center;
+}
+.mainContainer .container-fluid .contactUs .contactPage .contactBy .imageBlock {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  border: 1px solid #e4e4e4;
+  background: #e4e4e4;
+  display: block;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  position: absolute;
+}
+.mainContainer .container-fluid .contactUs .contactPage .contactBy .imageBlock .logo {
+  height: 5rem;
+  display: block;
+  margin: 0 auto;
+}
+.mainContainer .container-fluid .contactUs .contactPage .contactBy .address {
   position: relative;
   float: left;
   width: 100%;
+  margin-top: 7.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333333;
+  text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .mainContainer .container-fluid .contactUs .contactPage .contactBy .address {
+    font-size: 1rem;
+  }
+}
+.mainContainer .container-fluid .contactUs .contactPage .contactBy .text {
+  position: relative;
+  width: 100%;
+  float: left;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.mainContainer .container-fluid .footer {
+  position: relative;
+  height: 20rem;
+  background-color: #648A63;
+}
+.mainContainer .container-fluid .footer .restroLogo {
+  position: relative;
+  margin-top: 3rem;
+  height: auto;
+}
+.mainContainer .container-fluid .footer .restroLogo .restroIcon {
+  position: relative;
+  height: 14rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+}
+.mainContainer .footerEnd {
+  height: auto;
+  line-height: 8rem;
+  width: 100%;
+  position: relative;
+  float: left;
+  background-color: #000;
+}
+.mainContainer .footerEnd .leftContent {
+  text-align: left;
+  color: #B3AEAE;
+  font-size: 1.6rem;
+}
+.mainContainer .footerEnd .rightContent {
+  text-align: right;
+  color: #B3AEAE;
+  font-size: 1.6rem;
+}
+@media screen and (max-width: 420px) {
+  .mainContainer .footerEnd {
+    line-height: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .mainContainer .footerEnd .leftContent {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .mainContainer .footerEnd .rightContent {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
