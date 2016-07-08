@@ -62,7 +62,7 @@ self.addEventListener('push', function(event) {
       })
       .then(function(response) { return response.json(); })
       .then(function(data) {
-        self.registration.showNotification(data.title, {
+    return        self.registration.showNotification(data.title, {
           body: data.body,
           //icon: 'https://letreach.com/assets/letreach/img/ltr-icon.png?url=abcd'
           icon: "https://192.168.8.236:18000/images/realbox.png"

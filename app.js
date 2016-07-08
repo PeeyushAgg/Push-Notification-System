@@ -60,8 +60,10 @@ app.get('/', function(req, res) {
 app.post('/api', function(req, res) {
 
     var data = {};
+    console.log(custom_content);
+    
     data.body = custom_content.text;//"This is another test message";
-    data.title = "Realbox Notifications";
+    data.title = custom_content.title //"Realbox Notifications";
     data.icon = "/images/realboxLogo.ico";
     data.url = custom_content.url;
 
@@ -80,12 +82,13 @@ res.sendFile(path.join(__dirname + '/public/views/post.html') );
 //app.get('/postMsg' , function (req,res) {
 app.post('/postMsg' , function (req,res) {
     
-    //var receive_key = '"doIfMEbE1xo:APA91bFolX43Gi_VibjLRwUzOqyeNGmlsix99DSrYZrFimHn1w07Wg-Y0yuQ_zMzKC4rCkPkdFAMJ1e_gJ0fdJEZrghFeXM5iPvMisTwR1Z82TiqgPRhamtJg1j0AZaCokp9Ys2SDWkL"'
-    //var receive_key = '"fKU8sRSJtIs:APA91bF0q0v_hJiCq9mYBrqpYHQMbSUZe9bkJzOxJkIYUkiS7WK767ovFe96R_HVdXdZDl_ie1BxhsHC19kJ8Yqx7qpX_2kY-EzuRn6KNsjzCKY73jG7aqz2ypUWy3UbdrSjxscsmGHT"'
      
 	custom_content = req.body.data;
-	//console.log(custom_content);
-	
+	console.log(custom_content);
+	console.log("==============================");
+    
+
+
     var receive_key = "\"" + custom_content._id + "\"";
     var dataString = '{"registration_ids":['+ receive_key +']}';
     
@@ -97,7 +100,7 @@ app.post('/postMsg' , function (req,res) {
     body: dataString,
     headers: { 
 
-     "Authorization": "key=AIzaSyDolKXSYT4qVoksR5V8S78YUdxwFzdocT8", 
+     "Authorization": "key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", 
      "Content-Type": "application/json" 
 
     }
@@ -145,7 +148,7 @@ res.send("Message Sent")
 app.post('/saveKey', function(req, res) {
     console.log('KeySaved');
     var r = req.body;
-    console.log(r);
+//    console.log(r);
    MongoClient.connect('mongodb://127.0.0.1:27017/Realbox', function(err, db) {
  //  MongoClient.connect('mongodb://192.168.8.236:27017/Realbox', function(err, db) {
         var collection = db.collection('keys');
@@ -202,9 +205,3 @@ var options = {
 };
 
 https.createServer(options,app).listen(18000);
-// https.createServer({
-//       key: fs.readFileSync('server.key'),
-//       cert: fs.readFileSync('server.crt')
-//     }, app).listen(8000);
-
-

@@ -38,6 +38,8 @@ bind('.btnSave', function(){
 	//console.log
 	msg_details.data.text = $('.input').val();
 	msg_details.data.url = $('.url').val();
+	msg_details.data.title = $('.title').val();
+
     console.log(msg_details)
 	msgSend.postMsg(msg_details, function(err){
 		console.log(err);
